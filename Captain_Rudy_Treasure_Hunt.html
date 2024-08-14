@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea of Thieves: Captain Rudy's Treasure Hunt</title>
+    <style>
+        body {
+            background-image: url('https://www.seaofthieves.com/images/3f317d5d-9b17-4960-9cf8-bf1edc4cbb07/screenshot.jpg'); 
+            background-size: cover;
+            color: #f0f0f0;
+            font-family: 'Pirata One', cursive;
+            text-align: center;
+            padding: 20px;
+        }
+        .puzzle {
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            width: 60%;
+        }
+        .hidden {
+            display: none;
+        }
+        input {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 2px solid #c0a062;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #c0a062;
+            border: none;
+            border-radius: 5px;
+            color: #000;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #d3b276;
+        }
+        h1, h2 {
+            color: #f0c040;
+        }
+        .character {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .character img {
+            border-radius: 10px;
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ahoy, Captain Rudy!</h1>
+    <div class="character">
+        <img src="character_rudy.png" alt="Captain Rudy">
+        <p>Captain Rudy, the most feared pirate on the Seven Seas, is ready for his next adventure.</p>
+    </div>
+    <p>Your grand adventure begins now. The seas are rough, but the treasure awaits. Solve the puzzles to navigate through the storm and claim your prize!</p>
+    <div class="puzzle" id="puzzle1">
+        <h2>Puzzle 1: The Pirate's Compass</h2>
+        <p>In the Sea of Thieves, you seek a treasure that's never north, south, east, or west. What guides you on your quest?</p>
+        <input type="text" id="answer1" placeholder="Your answer here">
+        <button onclick="checkAnswer1()">Submit</button>
+        <p id="result1"></p>
+    </div>
+    <!-- Additional puzzles here -->
+    <div class="puzzle hidden" id="final">
+        <h2>Congratulations, Captain Rudy!</h2>
+        <p>You’ve outwitted the sea and secured the treasure. The legends will speak of your name for ages to come!</p>
+        <p>Your reward: Eternal glory and this virtual treasure chest 🏴‍☠️</p>
+    </div>
+    <script>
+        function checkAnswer1() {
+            var answer = document.getElementById("answer1").value.toLowerCase();
+            if (answer === "the heart" || answer === "heart") {
+                document.getElementById("result1").textContent = "Correct, Captain! Proceed to the next riddle.";
+                document.getElementById("puzzle2").classList.remove("hidden");
+            } else {
+                document.getElementById("result1").textContent = "Try again, matey!";
+            }
+        }
+    </script>
+</body>
+</html>
